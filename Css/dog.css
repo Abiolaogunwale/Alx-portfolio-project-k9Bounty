@@ -116,9 +116,10 @@ right: -5px;
 header{
 background-color:rgba(0, 0, 0, 0.6);
 width: 100%;
-min-height: 2600px;
-background: url(../Images/dogflier1.jpg);
-background-repeat:no-repeat;
+min-height: 800px;
+background: url(../Images/breeding.jpg);
+background-repeat:repeat; 
+/* background-repeat:no-repeat; */
 background-size: cover;
 background-position: center;
 display: flex;
@@ -386,9 +387,11 @@ align-items: center;
    font-weight: bold;
    background-color: blue;
    cursor: pointer;
+   
 }
 .cart-items-purchase:hover{
    background-color: rgba(0, 0, 225, 0.7);
+   
 }
 .breeds {
    width: 90%;
