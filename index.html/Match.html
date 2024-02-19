@@ -64,13 +64,17 @@
     <section id="questionnaire">
       <h2>Tell Us About Your Dog</h2>
       <form id="userForm">
-        <label for="name">Name:</label>
+        <label for="name"><b>Name:</b></label>
         <input type="text" id="name" required><br>
-        <label for="age"><br>Age:</label>
+        <label for="age"><br><b>Age:</b></label>
         <input type="text" id="name" required><br>
-        <label for="e-mail"><br>E-mail:</label>
+        <label for="e-mail"><br> <b>E-mail:</b></label>
         <input type="text" id="e-mail" required><br>
-        <label for="address"><br>address:</label>
+        <label for="Colour"><br><b>Colour:</b></label>
+        <input type="text" id="Colour" required><br>
+        <label for="Description"><br><b>Description:</b></label>
+        <input type="text" id="Description" required><br>
+        <label for="address"><br><b>address:</b></label>
         <input type="number and text" id="address" required><br>
         <!-- Add more questionnaire fields as needed -->
         
@@ -95,13 +99,16 @@
       const formData = new FormData(userForm);
       const userName = formData.get('name');
       const userAge = formData.get('age');
+      const userEmail = formData.get('E-mail');
+      const userColour = formData.get('Colour');
+      <!-- const userDescription = formData.get('Description'); -->
+      const userAddress = formData.get('Address');
       // Collect other form data as needed
       
       // Simulate fetching matches (replace with actual API call)
       const matches = [
-        { name: 'Buddy', breed: 'Golden Retriever', age: 3 },
-        { name: 'Max', breed: 'German Shepherd', age: 2 },
-
+        { name: 'Buddy', breed: 'Golden Retriever', age: 3, Description: 'It is Friendly', Colour: 'Brown', },
+        { name: 'Max', breed: 'German Shepherd', age: 2, Description: 'It is Cozy', Colour: 'Brown', },
         // Add more matches as needed
       ];
       const matches1 = [
@@ -125,6 +132,8 @@
           <h3>${match.name}</h3>
           <p>Breed: ${match.breed}</p>
           <p>Age: ${match.age}</p>
+          <!-- <p>Description: ${match.description}</p> -->
+          <p>Colour: ${match.Colour}</p>
           <!-- Add more match details -->
         `;
         matchResults.appendChild(matchCard);
@@ -151,6 +160,11 @@
 <li>
     <a href="#">
     <i class="fa-brands fa-twitter" aria-hidden="true"></i>
+</a>
+</li>
+<li>
+    <a href="https://www.github.com/Abiolaogunwale">
+    <i class="fa-brands fa-github" aria-hidden="true"></i>
 </a>
 </li>
     </ul>
