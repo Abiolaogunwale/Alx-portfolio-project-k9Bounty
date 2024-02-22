@@ -125,31 +125,24 @@
         <div class="form-container">
             <h1>Welcome to K9Kounty</h1>
             <p>Sign up to get started</p>
-            <form action="process_form.php" method="post">
+            <form id="myForm">
                 <input type="text" id="name" name="name" placeholder="Your Name" required><br>
                 <input type="email" id="email" name="email" placeholder="Your Email Address" required><br>
-              <input type="submit" value="Get Started"> 
-              
-              <!-- <form id="redirectForm" action="./Breeds.html">
-                <input type="submit" value="Get Started">
-            </form>
-            
-            <script>
-                document.addEventListener('DOMContentLoaded', function() {
-                    const redirectForm = document.getElementById('redirectForm');
-                    redirectForm.addEventListener('submit', function(event) {
-                        event.preventDefault(); // Prevent default form submission behavior
-                        window.location.href = this.action;
-                    });
-                });
-            </script> -->
-            
-                
-                
-               <!-- <input type="submit" value="Get Started"> -->
-                
+              <input type="submit" value="Get Started">                
             </form>
         </div>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelector("form").addEventListener("submit", function(event) {
+                event.preventDefault(); // Prevent the form from submitting normally
+
+                // You can perform validation or further processing here
+
+                // Redirect to index.html
+                window.location.href = "doghome.html";
+            });
+        });
+    </script>
 </body>
 </html>
