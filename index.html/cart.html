@@ -215,5 +215,55 @@
     <!-- end of general wrapper -->
  
 <!-- <script src="../JS/collection.js"></script> -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const addToCartButtons = document.querySelectorAll('.breeds-items-btn');
+        const cartCount = document.querySelector('.cart-count');
+        const cartTotal = document.querySelector('.cart-total');
+        let totalItems = 0;
+        let totalPrice = 0;
+
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement.parentElement;
+                const title = item.querySelector('.breeds-items-title').textContent;
+                const price = item.querySelector('.breeds-items-price').textContent.replace('₦', '').trim();
+                const quantity = 1; // For simplicity, assuming always adding 1 item at a time
+
+                totalItems += quantity;
+                totalPrice += parseFloat(price) * quantity;
+
+                updateCartCount();
+                updateCartTotal();
+            });
+        });
+
+        function updateCartCount() {
+            cartCount.textContent = totalItems;
+        }
+
+        function updateCartTotal() {
+            cartTotal.textContent = `Total: ₦${totalPrice.toFixed(2)}`;
+        }
+
+        const purchaseButton = document.querySelector('.cart-items-purchase');
+        purchaseButton.addEventListener('click', () => {
+            if (totalItems > 0) {
+                alert(`Thank you for your purchase! Your total is: ₦${totalPrice.toFixed(2)}`);
+                clearCart();
+            } else {
+                alert('Your cart is empty. Please add items before checking out.');
+            }
+        });
+
+        function clearCart() {
+            totalItems = 0;
+            totalPrice = 0;
+            updateCartCount();
+            updateCartTotal();
+        }
+    });
+</script>
+
 </body>
 </html>
